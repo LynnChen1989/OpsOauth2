@@ -7,6 +7,7 @@ import (
 
 func main() {
 	// ex.NewTestStorage implements the "osin.Storage" interface
+	// ex.NewTestStorage implements the "osin.Storage" interface
 	server := osin.NewServer(osin.NewServerConfig(), NewTestStorage())
 
 	// Authorization code endpoint
