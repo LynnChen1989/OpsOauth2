@@ -20,7 +20,7 @@ func NewTestStorage() *TestStorage {
 		refresh:   make(map[string]string),
 	}
 
-	r.clients["1234"] = &osin.DefaultClient{
+	r.clients["1234111"] = &osin.DefaultClient{
 		Id:          "1234",
 		Secret:      "aabbccdd",
 		RedirectUri: "http://localhost:14000/appauth",
