@@ -1,28 +1,30 @@
 <div class="row">
     <div class="col-lg-6">
-        <form class="bs-component">
+        <form class="bs-component" action="/app-add" method="post">
             <div class="form-group">
                 <label class="col-form-label col-form-label-lg" for="app-name">应用名称</label>
-                <input class="form-control form-control-lg" type="text" placeholder="如：CMDB配置管理系统" id="app-name">
+                <input class="form-control form-control-lg" type="text"
+                       placeholder="如：CMDB配置管理系统" name="app-name" id="app-name">
             </div>
 
             <div class="form-group">
                 <label class="col-form-label col-form-label-lg" for="app-description">应用描述</label>
-                <input class="form-control form-control-lg" type="text" placeholder="如：主机管理" id="app-description">
+                <input class="form-control form-control-lg" type="text" placeholder="如：主机管理程序"
+                       name="app-description" id="app-description">
             </div>
 
             <div class="form-group">
                 <label class="col-form-label col-form-label-lg" for="app-logo">应用图标</label>
-                <input type="file" class="form-control-file" id="app-logo" aria-describedby="fileHelp">
+                <input type="file" class="form-control-file" id="app-logo" aria-describedby="fileHelp" name="app-logo">
                 <small id="fileHelp" class="form-text text-muted">请上传应用的展示图标</small>
             </div>
 
             <div class="form-group">
-                <label class="col-form-label col-form-label-lg" for="inputLarge">回调地址</label>
+                <label class="col-form-label col-form-label-lg" for="app-callback">回调地址</label>
                 <input class="form-control form-control-lg" type="text" placeholder="如：http://oauth.dragonest.com"
-                       id="inputLarge">
+                       id="app-callback" name="app-callback">
             </div>
-            <button type="submit" class="btn btn-primary">保存</button>
+            <button type="submit" class="btn btn-success">保存</button>
             <button type="button" class="btn btn-light" id="cancel">取消</button>
         </form>
     </div>

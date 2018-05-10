@@ -7,6 +7,7 @@ import (
 	"os"
 	"fmt"
 	"github.com/astaxie/beego"
+	"log"
 )
 
 func init() {
@@ -18,6 +19,11 @@ func init() {
 	uri := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8", DbUser, DbPass, DbHost, DbPort, DbName)
 	orm.RegisterDriver("mysql", orm.DRMySQL)
 	orm.RegisterDataBase("default", "mysql", uri)
+	err := orm.RunSyncdb("default", false, true)
+	if err != nil {
+		log.Fatal("Create table error:", err)
+	}
+
 }
 
 func main() {

@@ -5,6 +5,7 @@ import (
 	"github.com/astaxie/beego/orm"
 	"web/models"
 	"fmt"
+	"log"
 )
 
 type MainController struct {
@@ -17,13 +18,10 @@ func (mc *MainController) Get() {
 	o := orm.NewOrm()
 	user := models.UserInfo{Id: 1}
 	err := o.Read(&user)
-	if err == orm.ErrNoRows {
-		fmt.Println("Can not find any data.")
-	} else if err == orm.ErrMissPK {
-		fmt.Println("Can not find pk.")
-	} else {
-		fmt.Println(user.UserName)
+	if err != nil {
+		log.Println(err)
 	}
+	fmt.Println(user.UserName)
 	mc.LayoutSections = make(map[string]string)
 	mc.LayoutSections["Content"] = "application/applist.html"
 	mc.Layout = "base.html"

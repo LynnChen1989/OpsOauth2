@@ -1,19 +1,22 @@
 package models
 
-import "github.com/astaxie/beego/orm"
+import (
+	"github.com/astaxie/beego/orm"
+)
 
 type UserInfo struct {
 	Id           int
-	UserName     string
-	UserPassword string
+	UserName     string //用户名
+	UserPassword string //用户密码
 }
 
 type AppInfo struct {
 	Id          int
-	AppName     string
-	AppDesc     string
-	CallbackUrl string
-	User        *UserInfo `orm:"rel(one)"`
+	AppName     string                     //应用名称
+	AppDesc     string                     //应用描述
+	LogoPath    string                     //Logo路径
+	CallbackUrl string                     //回调地址
+	UserInfo    *UserInfo `orm:"rel(one)"` //所属用户
 }
 
 func init() {
