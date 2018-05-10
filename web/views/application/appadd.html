@@ -1,5 +1,37 @@
 <div class="row">
-    <div class="col-xl-4">
-        add
+    <div class="col-lg-6">
+        <form class="bs-component">
+            <div class="form-group">
+                <label class="col-form-label col-form-label-lg" for="app-name">应用名称</label>
+                <input class="form-control form-control-lg" type="text" placeholder="如：CMDB配置管理系统" id="app-name">
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label col-form-label-lg" for="app-description">应用描述</label>
+                <input class="form-control form-control-lg" type="text" placeholder="如：主机管理" id="app-description">
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label col-form-label-lg" for="app-logo">应用图标</label>
+                <input type="file" class="form-control-file" id="app-logo" aria-describedby="fileHelp">
+                <small id="fileHelp" class="form-text text-muted">请上传应用的展示图标</small>
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label col-form-label-lg" for="inputLarge">回调地址</label>
+                <input class="form-control form-control-lg" type="text" placeholder="如：http://oauth.dragonest.com"
+                       id="inputLarge">
+            </div>
+            <button type="submit" class="btn btn-primary">保存</button>
+            <button type="button" class="btn btn-light" id="cancel">取消</button>
+        </form>
     </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $("#cancel").click(function () {
+            window.location.href = "/"
+        })
+    })
+</script>
