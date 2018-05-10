@@ -10,6 +10,7 @@ import (
 	"log"
 )
 
+
 func init() {
 	DbHost := os.Getenv("DB_HOST")
 	DbPort := os.Getenv("DB_PORT")

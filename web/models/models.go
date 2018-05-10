@@ -12,11 +12,11 @@ type UserInfo struct {
 
 type AppInfo struct {
 	Id          int
-	AppName     string                     //应用名称
-	AppDesc     string                     //应用描述
-	LogoPath    string                     //Logo路径
-	CallbackUrl string                     //回调地址
-	UserInfo    *UserInfo `orm:"rel(one)"` //所属用户
+	AppName     string                    //应用名称
+	AppDesc     string                    //应用描述
+	LogoPath    string                    //Logo路径
+	CallbackUrl string                    //回调地址
+	UserInfo    *UserInfo `orm:"rel(fk)"` //所属用户
 }
 
 func init() {
