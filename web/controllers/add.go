@@ -28,10 +28,12 @@ func (aac *AddAppController) Post() {
 
 	if saveStatus == true {
 		logoPath := fmt.Sprintf("static/img/upload/%s.png", appName)
-		aac.SaveData(appName, appDesc, logoPath, appCallBack)
+		id, _ := aac.SaveData(appName, appDesc, logoPath, appCallBack)
+		aac.Redirect(fmt.Sprintf("/app-added/%d", id), 302)
 	} else {
+		aac.Redirect("/app-add", 302)
 	}
-	aac.Redirect("/app-added", 302)
+
 }
 
 // 保存图片
@@ -66,13 +68,18 @@ func (aac *AddAppController) SavePic(appName, domLogo string) (status bool) {
 }
 
 // 保存数据库记录
-func (aac *AddAppController) SaveData(appName, appDesc, logoPath, callbackUrl string) {
+func (aac *AddAppController) SaveData(appName, appDesc, logoPath, callbackUrl string) (id int64, err error) {
 	o := orm.NewOrm()
 	var app models.AppInfo
-	var user models.UserInfo
-
-	//user.UserName = "chenlin"
-	//user.UserPassword = "chenlin"
+	user := models.UserInfo{UserName: "chenlin002"}
+	errRead := o.Read(&user, "UserName")
+	if errRead == orm.ErrNoRows {
+		log.Println("[E] can not find user.")
+	} else if errRead == orm.ErrMissPK {
+		log.Println("[E] can not find pk")
+	} else {
+		log.Println("[I] relation user is:", user.UserName)
+	}
 
 	app.AppName = appName
 	app.AppDesc = appDesc
@@ -80,10 +87,11 @@ func (aac *AddAppController) SaveData(appName, appDesc, logoPath, callbackUrl st
 	app.CallbackUrl = callbackUrl
 	app.UserInfo = &user
 
-	id, err := o.Insert(&app)
+	id, err = o.Insert(&app)
 	if err != nil {
-		log.Println("Insert data error:", err)
+		log.Println("[E] Insert data error:", err)
 	} else {
-		log.Println("Insert data success, id is:", id)
+		log.Println("[I] Insert data success, id is:", id)
 	}
+	return
 }

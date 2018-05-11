@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
+	"fmt"
 )
 
 type AddedAppController struct {
@@ -13,4 +14,6 @@ func (aac *AddedAppController) Get() {
 	aac.LayoutSections["Content"] = "application/appadded.html"
 	aac.Layout = "base.html"
 	aac.TplName = "base.html"
+	id := aac.Ctx.Input.Param(":id")
+	fmt.Println(id)
 }
