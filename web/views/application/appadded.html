@@ -1,11 +1,10 @@
 <div class="row">
     <div class="col-xl-4">
         <div class="card border-success mb-3" style="max-width: 20rem;">
-            <div class="card-header">已增加的应用</div>
+            <div class="card-header">{{.app.AppName}}</div>
             <div class="card-body">
-                <h4 class="card-title">Primary card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
+                <h4 class="card-title">{{.app.AppName}}</h4>
+                <p class="card-text">回调地址: {{.app.CallbackUrl}}
                 </p>
             </div>
         </div>
