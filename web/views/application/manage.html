@@ -1,0 +1,23 @@
+<div class="row">
+    <table class="table table-hover">
+        <thead>
+        <tr class="table-borderless">
+            <th scope="col">应用名称</th>
+            <th scope="col">应用描述</th>
+            <th scope="col">回调地址</th>
+            <th scope="col">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {{ range  $index, $elem := .Apps}}
+        <tr class="table-light">
+            <td scope="row">{{$elem.AppName}}</td>
+            <td>{{$elem.AppDesc}}</td>
+            <td>{{$elem.CallbackUrl}}</td>
+            <td><button class="btn btn-danger btn-sm">删除</button></td>
+        </tr>
+        {{end}}
+        </tbody>
+    </table>
+</div>
