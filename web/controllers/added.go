@@ -16,6 +16,7 @@ func (aac *AddedAppController) Get() {
 	aac.LayoutSections["Content"] = "application/appadded.html"
 	aac.Layout = "base.html"
 	aac.TplName = "base.html"
+
 	id := aac.Ctx.Input.Param(":id")
 	Aid, _ := strconv.Atoi(id)
 	app := models.AppInfo{Id: Aid}

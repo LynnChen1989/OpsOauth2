@@ -4,7 +4,6 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	"web/models"
-	"log"
 )
 
 type MainController struct {
@@ -13,9 +12,12 @@ type MainController struct {
 
 func (mc *MainController) Get() {
 	o := orm.NewOrm()
-	app := models.AppInfo{}
-	err := o.Read(&app)
+	appInfo:= new(models.AppInfo)
+	qs := o.QueryTable(appInfo)
+	var app []*models.AppInfo
+	qs.All(&app)
 
+	mc.Data["Apps"] = app
 	mc.LayoutSections = make(map[string]string)
 	mc.LayoutSections["Content"] = "application/applist.html"
 	mc.Layout = "base.html"

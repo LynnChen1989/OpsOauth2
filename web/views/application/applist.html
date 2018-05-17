@@ -1,24 +1,16 @@
 <div class="row">
+
+{{ range  $index, $elem := .Apps}}
+
     <div class="col-xl-4">
         <div class="card border-primary mb-3" style="max-width: 20rem;">
-            <div class="card-header">CMDB配置管理系统</div>
+            <div class="card-header">{{$elem.AppName}}</div>
             <div class="card-body">
-                <h4 class="card-title">Primary card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
-                </p>
+                <img src="{{$elem.LogoPath}}" width="100%" height="200px">
+                <p class="card-text">{{$elem.AppDesc}}</p>
             </div>
         </div>
     </div>
 
-    <div class="col-xl-4">
-        <div class="card border-primary mb-3" style="max-width: 20rem;">
-            <div class="card-header">Dnsdog域名管理系统</div>
-            <div class="card-body">
-                <h4 class="card-title">Primary card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                    the card's content.</p>
-            </div>
-        </div>
-    </div>
+{{end}}
 </div>

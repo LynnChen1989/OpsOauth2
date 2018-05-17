@@ -4,25 +4,26 @@
             <div class="form-group">
                 <label class="col-form-label col-form-label-lg" for="app-name">应用名称</label>
                 <input class="form-control form-control-lg" type="text"
-                       placeholder="如：CMDB配置管理系统" name="app-name" id="app-name">
+                       placeholder="如：CMDB配置管理系统" name="app-name" id="app-name" required>
             </div>
 
             <div class="form-group">
                 <label class="col-form-label col-form-label-lg" for="app-description">应用描述</label>
                 <input class="form-control form-control-lg" type="text" placeholder="如：主机管理程序"
-                       name="app-description" id="app-description">
+                       name="app-description" id="app-description" required>
             </div>
 
             <div class="form-group">
                 <label class="col-form-label col-form-label-lg" for="app-logo">应用图标</label>
-                <input type="file" class="form-control-file" id="app-logo" aria-describedby="fileHelp" name="app-logo">
+                <input type="file" class="form-control-file" id="app-logo" aria-describedby="fileHelp"
+                       name="app-logo" required>
                 <small id="fileHelp" class="form-text text-muted">请上传应用的展示图标</small>
             </div>
 
             <div class="form-group">
                 <label class="col-form-label col-form-label-lg" for="app-callback">回调地址</label>
                 <input class="form-control form-control-lg" type="text" placeholder="如：http://oauth.dragonest.com"
-                       id="app-callback" name="app-callback">
+                       id="app-callback" name="app-callback" required>
             </div>
             <button type="submit" class="btn btn-success">保存</button>
             <button type="button" class="btn btn-light" id="cancel">取消</button>
