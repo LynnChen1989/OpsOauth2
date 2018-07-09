@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
-	"osin"
+	"OpsOauth2/osin"
 )
 
 func main() {
