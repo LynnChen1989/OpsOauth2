@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "OpsOauth2/web/routers"
+	_ "OpsOauth2/routers"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/go-sql-driver/mysql"
 	"os"

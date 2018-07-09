@@ -6,7 +6,7 @@ import (
 	"log"
 	"strings"
 	"github.com/astaxie/beego/orm"
-	"web/models"
+	"OpsOauth2/models"
 )
 
 type AddAppController struct {

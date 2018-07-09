@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export GOPATH=/c/snake/code/OpsOauth2
+export GOPATH=/c/snake/code/GoPro
 DIR=`pwd`
 now=`date "+%Y/%m/%d %H:%M:%s"`
 echo "${now} Start Build ..."

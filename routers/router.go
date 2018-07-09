@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"web/controllers"
+	"OpsOauth2/controllers"
 	"github.com/astaxie/beego"
 )
 
